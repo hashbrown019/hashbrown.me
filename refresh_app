@@ -1,0 +1,1 @@
+sudo git pull && sudo service apache2 restart && sudo tail -f hashbrown_logs/error.log
