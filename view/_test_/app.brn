@@ -1,0 +1,64 @@
+CSS_INCLUDE = ""
+
+// VIEW.include_css({href:"https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css",rel:"stylesheet"})
+// VIEW.include_js({src:"https://code.jquery.com/jquery-3.7.1.min.js",type:"text/javascript"})
+// VIEW.include_js({src:"https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js",type:"text/javascript"})
+
+JS({src:"https://code.jquery.com/jquery-3.7.1.min.js",type:"text/javascript"})
+CSS({href:"https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css",rel:"stylesheet"})
+JS({src:"https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js",type:"text/javascript"})
+
+var samples = '{{content}}';
+var samples2 = '{{contents}}';
+
+var header_temp = [
+	{
+		tag : "header", classn : "x-header x-container x-light-grey", text : "'{{contents}}'",
+		contents : [
+			{
+				tag : "p", id : "p1", classn : "fa fa-trash", contents : "hahaah"
+			}
+		]
+	}
+];
+
+wahaha = <start$>
+	_STRING_
+	_temp_ = "temporary"
+	def main():
+		return "{{content}} {}".format("ko na to")
+<end$>
+
+// SPECIFIC DoM EVENT ASIGNMENT
+var header = VIEW.init(header_temp);
+header.create()
+header.event("click",head_func)
+
+// GLOBAL DoM EVENT ASIGNMENT
+VIEW.event("p1","click",test_func)
+println(header)
+
+
+// =====================================
+// =====================================
+// =====================================
+// =====================================
+// =====================================
+var no = <start$>
+	_STRING_
+	def main():
+		return sample()
+<end$>
+
+function test_func(){
+	alert(no)
+}
+function head_func(){
+	var yes = <start$>
+		_STRING_
+		def main():
+			return sample()
+	<end$>
+	alert(yes)
+}
+
