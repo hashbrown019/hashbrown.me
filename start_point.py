@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, render_template_string
 from modules.brorn import Brorn
-from flask_minify import Minify
+from views.login import login
+
 
 app = Flask(__name__)
 
@@ -15,6 +16,3 @@ def index():
 
 def sample_in_func():
 	return {"sample":"args"}
-
-if __name__ == '__main__':
-	app.run(debug=True)
