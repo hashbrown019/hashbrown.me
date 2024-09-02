@@ -1,12 +1,17 @@
 from flask import Flask, render_template, redirect, render_template_string
+import os, sys
+
+ROOT_FILE_PATH = os.path.realpath(__file__)
+
 
 _INCLUDE_FUNCS = {}
 DATA_RETURN_TYPES =["_INT_","_STRING_","_FLOAT_","_OBJECT_","_NONE_"]
 
 class Brorn:
-	def __init__(self, arg):
+	def __init__(self, arg, ROOT_DIR=os.path.dirname(sys.argv[0])):
 		super(Brorn, self).__init__();
 		self.arg = arg;
+		self.ROOT_DIR = ROOT_DIR;
 
 	def test():
 		print(" * Running Brorn Module");
@@ -16,8 +21,8 @@ class Brorn:
 		return _INCLUDE_FUNCS
 
 	'''return _app.render_template(name_of_wsp_file, content="test", contents="test 2")'''
-	def render_template(this,view,**vals):
-		path = "view" if "brn" in view else 'templates' 
+	def render_template(self,view,**vals):
+		path = self.ROOT_DIR
 
 		view_ = open("{}/{}".format(path,view),"r");
 		VIEW = view_.read() + "\n";

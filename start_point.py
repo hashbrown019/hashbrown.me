@@ -1,18 +1,8 @@
-from flask import Flask, render_template, redirect, render_template_string
-from modules.brorn import Brorn
-from views.login import login
-
-
+from flask import Flask, render_template, redirect, render_template_string, Blueprint
 app = Flask(__name__)
 
-_app = Brorn(__name__)
 
-@app.route("/")
-def index():
-	_app.include_function("sample",sample_in_func)
-	# return _app.render_template("index.html", content="test", contents="test 2")
-	return _app.render_template("_test_/app.brn", content="test", contents="test 2")
+from view._test_ import _test_
+app.register_blueprint(_test_.app);
 
 
-def sample_in_func():
-	return {"sample":"args"}
