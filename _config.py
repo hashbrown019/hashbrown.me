@@ -1,0 +1,20 @@
+
+
+SERVER_SETINGS = {
+	'ROOT_DIR' : "/home/ubuntu/hashbrown_me/",
+	'HOST' : " **DEFINED BY SERVER SETTINGS ** ",
+	'PORT' : " **DEFINED BY SERVER SETTINGS ** ",
+	'IS_DEBUG' : " **DEFINED BY SERVER SETTINGS ** ",
+}
+
+
+LOCAL_SETINGS = {
+	'ROOT_DIR' : "",
+	'HOST' : "0.0.0.0",
+	'PORT' : "5000",
+	'IS_DEBUG' : True,
+	
+}
+
+
+CURRENT_SETTING = None #DO NOT MODIFY THIS VARIABLE
