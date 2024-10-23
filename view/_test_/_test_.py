@@ -17,7 +17,7 @@ def index():
 
 @app.route("/openAiTest")
 def openAiTest():
-	return "openAiTest"
+	return {"test":"openAiTest"}
 	from openai import OpenAI
 	client = OpenAI()
 
