@@ -23,7 +23,7 @@ class Brorn:
 	'''return _app.render_template(name_of_wsp_file, content="test", contents="test 2")'''
 	def render_template(self,view,**vals):
 		path = self.ROOT_DIR
-
+		print("{}\\{}".format(path,view))
 		view_ = open("{}/{}".format(path,view),"r");
 		VIEW = view_.read() + "\n";
 		view_.close();
